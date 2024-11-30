@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/index.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <title>Planify</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f7f7f7;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+      height: 90%;
+      max-width: 1200px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      background: #ffffff;
+    }
+
+    .left-panel {
+      flex: 1;
+      background-color: #4ea685;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      padding: 40px;
+    }
+
+    .logo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      margin-bottom: 30px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .logo:hover {
+      transform: scale(1.1);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+    }
+
+    .buttons button {
+      width: 200px;
+      padding: 15px;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .login-button {
+      background-color: #ffffff;
+      color: #4ea685;
+    }
+
+    .login-button:hover {
+      background-color: #e0e0e0;
+      transform: scale(1.05);
+    }
+
+    .signup-button {
+      background-color: #57b894;
+      color: #ffffff;
+    }
+
+    .signup-button:hover {
+      background-color: #4ea685;
+      transform: scale(1.05);
+    }
+
+    .right-panel {
+      flex: 1;
+      background: url('/image/KakaoTalk_20241130_200047516.png') center center / cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #ffffff;
+      padding: 20px;
+    }
+
+    .description {
+      font-size: 24px;
+      line-height: 1.5;
+      font-weight: 400;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 왼쪽 패널 -->
+    <div class="left-panel">
+      <div
+        class="logo animate__animated animate__backInLeft"
+        onclick="navigateToPage()"
+      >
+        Planify
+      </div>
+      <div class="buttons">
+        <button
+          class="login-button animate__animated animate__fadeIn animate__delay-1s"
+          onclick="navigateToPage4()"
+        >
+          로그인
+        </button>
+        <button
+          class="signup-button animate__animated animate__fadeIn animate__delay-1s"
+          onclick="navigateToPage3()"
+        >
+          회원가입
+        </button>
+      </div>
+    </div>
+
+    <!-- 오른쪽 패널 -->
+    <div class="right-panel">
+      <p class="description" id="animated-text"></p>
+    </div>
+  </div>
+
+  <script>
+    // 타이핑 애니메이션
+    document.addEventListener("DOMContentLoaded", function () {
+      const text =
+        "여행 계획을 대신 짜주는 AI 여행 계획 사이트!\n이용을 원하신다면 로그인을 해주세요!";
+      let i = 0;
+      const speed = 50; // 타이핑 속도 (ms)
+
+      function typeWriter() {
+        if (i < text.length) {
+          document.getElementById("animated-text").innerHTML +=
+            text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+
+      typeWriter();
+    });
+
+    // 페이지 이동 함수
+    function navigateToPage() {
+      window.location.href = "index.html"; // 메인 페이지 이동
+    }
+
+    function navigateToPage3() {
+      window.location.href = "join.html"; // 회원가입 페이지 이동
+    }
+
+    function navigateToPage4() {
+      window.location.href = "login.html"; // 로그인 페이지 이동
+    }
+  </script>
+</body>
+</html>

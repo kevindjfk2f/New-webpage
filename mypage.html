@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script type="module" defer src="/js/test.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .my-page-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            margin-top: 100px;
+            animation: fadeInUp 1s;
+        }
+        .profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        h1 {
+            color: #333;
+            margin: 0;
+        }
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        .profile-info p {
+            margin: 5px 0;
+        }
+        .edit-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .edit-button:hover {
+            background-color: #0056b3;
+        }
+        .post-container h2 {
+            margin-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+        .post {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            padding: 15px;
+        }
+        .post h3 {
+            margin: 0 0 10px;
+            color: #007bff;
+        }
+        .post p {
+            margin: 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="my-page-container animate__animated animate__fadeInUp">
+        <div class="profile">
+            <div class="profile-header">
+                <h1>My Page</h1>
+                <button class="edit-button animate__animated animate__pulse animate__infinite">정보 수정</button>
+            </div>
+            <div class="profile-info">
+                <p id="userName"><strong>이름:</strong> </p>
+                <p id="email"><strong>이메일:</strong> </p>
+            </div>
+        </div>
+    </div>
+    <div class="my-page-container animate__animated animate__fadeInUp">
+        <div class="post-container">
+            <h2>내 게시물</h2>
+            <div class="post">
+                <h3>게시물 제목 1</h3>
+                <p>이것은 첫 번째 게시물의 내용입니다. 간단한 내용 예시입니다.</p>
+            </div>
+            <div class="post">
+                <h3>게시물 제목 2</h3>
+                <p>이것은 두 번째 게시물의 내용입니다. 더 많은 예시가 들어갈 수 있습니다.</p>
+            </div>
+            <div class="post">
+                <h3>게시물 제목 3</h3>
+                <p>이것은 세 번째 게시물의 내용입니다. 게시물은 필요에 따라 추가할 수 있습니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.edit-button').addEventListener('click', () => {
+            alert('정보 수정 화면으로 이동합니다.');
+        });
+    </script>
+</body>
+</html>

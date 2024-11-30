@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ff1rj7ko13&submodules=geocoder" async></script>
+    <script defer src="/js/map.js"></script>
+    <title>Planify</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-panel">
+          <img
+            src="/image/logo.png"
+            alt="Planify Logo"
+            class="logo animate__animated animate__backInLeft"
+          />
+          <div class="buttons">
+            <button
+              class="mypage-button animate__animated animate__fadeIn animate__delay-1s"
+            >
+              마이페이지
+            </button>
+            <button
+              class="bookmark-button animate__animated animate__fadeIn animate__delay-1s"
+            >
+              즐겨찾기
+            </button>
+            <button id="next-button" class="animate__animated animate__fadeIn animate__delay-1s">다음으로 이동 </button>
+          </div>
+        </div>
+        <div class="right-panel">
+          <div id="map"></div>
+        </div>
+    </div>
+</body>
+
+</html>

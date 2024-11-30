@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Great Vibes&display=swap" rel="stylesheet">
+    <script defer src="/js/info.js"></script>
+    <title>Planify</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="logo animate__animated animate__backInLeft">Planify</div>
+            <div class="buttons">
+                <button class="mypage-button animate__animated animate__fadeIn animate__delay-1s">마이페이지</button>
+                <button class="bookmark-button animate__animated animate__fadeIn animate__delay-1s">즐겨찾기</button>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="form-container animate__animated animate__zoomIn">
+                <div class="people">
+                    <input type="number" placeholder="여행 인원을 적어주세요" min="1">
+                    <input type="number" placeholder="예상 경비를 적어주세요" step="10000">
+                </div>
+                <div class="Date">
+                    <input type="date" placeholder="출발 날짜">
+                    <input type="date" placeholder="도착 날짜">
+                </div>
+                <p>hi</p>
+                <div class="preference">
+                    <input type="button" value="맛집">
+                    <input type="button" value="숙소">
+                    <input type="button" value="기타">
+                </div>
+
+                <input type="submit" value="계획 생성하기" id="plan-button"
+                    class="animate__animated animate__fadeIn animate__delay-0.5s">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

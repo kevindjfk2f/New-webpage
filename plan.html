@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Great Vibes&display=swap" rel="stylesheet">
+    <title>Planify</title>
+</head>
+<style>
+    .logo {
+        font-family: 'Great Vibes', cursive;
+        font-size: 48px;
+        color: #000; /* 원하는 색상으로 변경 가능 */
+        text-align: center;
+        margin-top: 50px;
+    }
+</style>
+<body>
+    <header>
+        <div class="styled-text">Planify</div>
+        <div class="button">
+            <button class="loginBtn">마이페이지</button>
+            <button class="signupBtn">즐겨찾기</button>
+        </div>
+    </header>
+
+    <div class="article">
+        <div class="planBox1"></div>
+        <div class="planBox2"></div>
+        <div class="planBox3"></div>
+    </div>
+    <!-- Import the Gemini API SDK -->
+    <script type="importmap">
+        {
+            "imports": {
+                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+            }
+        }
+    </script>
+
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+
+        // Replace 'YOUR_API_KEY' with your actual API key
+        const API_KEY = "YOUR_API_KEY";
+
+        if (!API_KEY) {
+            alert("API Key is missing. Please provide your API key.");
+        }
+
+        async function generateStory() {
+            try {
+                const genAI = new GoogleGenerativeAI(API_KEY);
+                const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+                const prompt = "Write a story about a magic backpack.";
+
+                // Generate content
+                const result = await model.generateContent(prompt);
+                const outputElement = document.getElementById('output');
+
+                // Display the result in the output element
+                outputElement.textContent = result.response.text();
+            } catch (error) {
+                console.error("Error generating content:", error);
+                alert("Failed to generate content. Check the console for details.");
+            }
+        }
+
+        document.getElementById('generate-btn').addEventListener('click', generateStory);
+    </script>
+</body>
+</html>
